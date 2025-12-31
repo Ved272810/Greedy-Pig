@@ -1,0 +1,139 @@
+body {
+  font-family: 'Arial Black', Gadget, sans-serif;
+  background-color: #ffb6c1; /* Pink background */
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-size: 3em;
+  color: #ff1493;
+  text-shadow: 2px 2px #fff;
+}
+
+p {
+  font-size: 1.8em;
+  color: #000;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#how-to-play {
+  max-width: 600px;
+  text-align: left;
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#player-list, #players-container, #final-scores {
+  margin-top: 20px;
+}
+
+.player-box {
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 10px;
+  border-radius: 15px;
+  font-size: 2em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.player-box:hover {
+  transform: scale(1.1);
+}
+
+.in {
+  background-color: #28a745;
+  color: white;
+}
+
+.out {
+  background-color: #dc3545;
+  color: white;
+}
+
+button {
+  padding: 15px 30px;
+  margin: 15px;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff69b4;
+  color: white;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+#dice {
+  font-size: 250px;
+  margin: 20px;
+  transition: transform 0.3s;
+}
+
+#dice.shake {
+  animation: shake 0.8s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(20deg); }
+  40% { transform: rotate(-20deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-10deg); }
+}
+
+#countdown {
+  font-size: 2em;
+  margin-top: 10px;
+  color: #000080;
+  font-weight: bold;
+}
+
+#round-points-box {
+  margin: 20px;
+  padding: 20px 40px;
+  font-size: 2em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffeb3b, #ff9800);
+  border-radius: 15px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* Spike for 4 roll animation */
+#spike {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 200px;
+  background-color: #444;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transition: bottom 0.5s ease-out;
+  z-index: 10;
+}
