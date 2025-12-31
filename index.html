@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greedy Pig</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Start Screen -->
+<div id="start-screen" class="screen">
+  <h1>🐷 GREEDY PIG 🎲</h1>
+  <button id="start-button">Start Game</button>
+  <div id="how-to-play">
+    <h2>How to Play</h2>
+    <p>
+      Roll the dice and collect points! Everyone starts <strong>IN</strong>.  
+      Each roll adds the dice number to every player still in.  
+      If a <strong>4</strong> is rolled, the round ends immediately and all "in" players get 0 for that round!  
+      Players can click their name to go <strong>OUT</strong>, keeping their points but stopping earning for this round.  
+      The game lasts 3, 5, or 10 rounds. Highest total wins!
+    </p>
+  </div>
+</div>
+
+<!-- Setup Screen -->
+<div id="setup-screen" class="screen hidden">
+  <h2>Setup Game</h2>
+  <label>Number of rounds:
+    <select id="rounds-select">
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select>
+  </label>
+  <div id="player-inputs">
+    <input type="text" id="player-name" placeholder="Enter player name">
+    <button id="add-player">Add Player</button>
+  </div>
+  <div id="player-list"></div>
+  <button id="start-game">Start Game</button>
+</div>
+
+<!-- Game Screen -->
+<div id="game-screen" class="screen hidden">
+  <h2>Round <span id="round-number">1</span></h2>
+  <div id="dice-container">
+    <div id="dice">🎲</div>
+    <button id="roll-button">Roll Dice</button>
+  </div>
+  <div id="round-points-box">Round Total: 0</div>
+  <div id="players-container"></div>
+  <button id="next-button">Next</button>
+  <div id="countdown"></div>
+</div>
+
+<!-- Leaderboard / End Screen -->
+<div id="end-screen" class="screen hidden">
+  <h2>Leaderboard</h2>
+  <div id="final-scores"></div>
+  <button id="play-again">Play Again</button>
+</div>
+
+<!-- Spike for 4 roll animation -->
+<div id="spike"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
